@@ -17,7 +17,12 @@ app.controller('mainController', function($scope, $http) {
     var destination = $scope.destination;
     $http.get('https://maps.googleapis.com/maps/api/geocode/json?address='  + origin + '&key=AIzaSyA-nftHnip6wJ1zX_SoBfmmhZmynfvk-u0').then(function(data) {
       var originGeoCode = data.data.results[0].geometry.location;
-      console.log(originGeoCode)
+      console.log(originGeoCode);
+    })
+
+    $http.get('https://maps.googleapis.com/maps/api/geocode/json?address='  + destination + '&key=AIzaSyA-nftHnip6wJ1zX_SoBfmmhZmynfvk-u0').then(function(data) {
+      var destGeoCode = data.data.results[0].geometry.location;
+      console.log(destGeoCode);
     })
   }
 });
