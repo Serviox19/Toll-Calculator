@@ -1,6 +1,6 @@
 var app = angular.module('tollCalculator', ['ui.router']);
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $urlRouterProvider.otherwise('/');
 
@@ -10,4 +10,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: 'public/views/partials/home.html',
     controller: 'mainController'
   })
-});
+
+  $locationProvider.html5Mode(true);
+}]);

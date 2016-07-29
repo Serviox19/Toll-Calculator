@@ -23,3 +23,7 @@ body {
 .form-group input {
   margin: 0 auto;
 }
+
+.result {
+  margin-top: 25px;
+}
